@@ -5,6 +5,8 @@ class LoginController < ApplicationController
             name = params[:user][:name]
             password = params[:user][:password]
 
+            session[:user_id] = nil
+
             if name.length == 0
                 flash[:error] = "没有用户名!"
                 redirect_to login_path
@@ -21,7 +23,8 @@ class LoginController < ApplicationController
             if @user.class == NilClass
                 redirect_to login_error_path
             elsif @user.password == password
-                redirect_to root_path
+                session[:user_id] = @user.id
+                redirect_to index_path
             else
                 redirect_to login_path
             end

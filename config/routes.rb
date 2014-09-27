@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root 'index#index'
 
+  get 'index' => 'index#index'
+
   get 'login' => 'login#login'
 
   post 'login' => 'login#login'
