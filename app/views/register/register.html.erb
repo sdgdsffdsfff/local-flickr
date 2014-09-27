@@ -1,0 +1,6 @@
+<%= form_for :user do |f|%>
+    <p>用户名: <%= f.text_field :name %></p>
+    <p>密码: <%= f.password_field :password%></p>
+    <p>确认密码: <%= f.password_field :re_password%></p>
+    <%= submit_tag '注册'%>
+<% end %>

@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   get 'login/error' => 'error#login_error'
 
+  get 'register' => 'register#register'
+
+  post 'register' => 'register#register'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
