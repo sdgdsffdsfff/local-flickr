@@ -1,3 +1,7 @@
+<% if flash[:error] %>
+    <div class="error"> <%= flash[:error]%> </div>
+<% end %>
+
 <%= form_for :user do |f| %>
     <p>用户名： <%= f.text_field :name%></p>
     <p>密码： <%= f.password_field :password%></p>
